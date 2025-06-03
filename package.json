@@ -2,8 +2,8 @@
   "name": "jsoneditor-react",
   "version": "3.1.2",
   "description": "React implementation of https://github.com/josdejong/jsoneditor",
-  "main": "es",
-  "module": "es",
+  "main": "es/index.js",
+  "module": "es/index.js",
   "files": [
     "es",
     "*.md",
@@ -15,7 +15,8 @@
     "lint": "eslint src stories --ext .js --ext .jsx --fix --config .eslintrc.json",
     "build:es": "cross-env BABEL_ENV=production NODE_ENV=production rollup -c rollup.es.config.js -i src/index.js -o es/index.js",
     "build": "npm run build:es && uglifycss es/editor.css > es/editor.min.css",
-    "prepublishOnly": "npm run lint && npm run build"
+    "prepublishOnly": "npm run lint && npm run build",
+    "prepare": "npm run build"
   },
   "repository": {
     "type": "git",
